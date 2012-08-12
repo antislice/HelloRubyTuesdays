@@ -1,3 +1,5 @@
+blah blah blah test feature
+
 == Hi girls,
 Had some problems at the beginning, because I updated my Mac OS to Mountain Lion.
 When it tried to fetch new gems, it didn't find some commands, like 'make', so it stopped.
