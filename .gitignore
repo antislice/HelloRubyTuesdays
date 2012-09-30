@@ -15,4 +15,4 @@
 /tmp
 
 # Ruby/Rails
-Gemfile.lock
+# Gemfile.lock # heroku requires that this be checked in
