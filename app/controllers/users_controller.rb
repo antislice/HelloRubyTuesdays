@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   def create
 	@user = User.new(params[:user])
 	if @user.save
+	  flash[:success] = "Welcome to Hello Ruby Tuesdays!"
 	  redirect_to @user
 	else
 	  render 'new'
@@ -14,6 +15,7 @@ class UsersController < ApplicationController
   end
 
   def show
+#        flash[:success] = "Welcome to Hello Ruby Tuesdays!"
   	@user = User.find(params[:id])
   end
 
