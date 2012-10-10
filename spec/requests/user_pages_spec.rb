@@ -23,7 +23,7 @@ describe "User pages" do
 
     before { visit signup_path }
 
-    let(:submit) { "Create my account" }
+    let(:submit) { "Create account!" }
 
     describe "with invalid information" do
       it "should not create a user" do
