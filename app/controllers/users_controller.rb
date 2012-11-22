@@ -6,14 +6,16 @@ class UsersController < ApplicationController
   end
 
   def create
-	@user = User.new(params[:user])
-	if @user.save
-	  sign_in @user
-	  flash[:success] = "Welcome to Hello Ruby Tuesdays!"
-	  redirect_to @user
-	else
-	  render 'new'
-	end
+    @user = User.new(params[:user])
+    @obj = @user
+    
+    if @user.save
+      sign_in @user
+      flash[:success] = "Welcome to Hello Ruby Tuesdays!"
+      redirect_to @user
+    else
+      render 'new'
+    end
   end
 
   def show
@@ -27,7 +29,8 @@ class UsersController < ApplicationController
   
   def update
     @user = User.find(params[:id])
-     
+    @obj = @user
+    
     if @user.authenticate(params[:user][:password])
       @user.password_confirmation = params[:user][:password]
     else
