@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
   def new
-	@user = User.new
+    @user = User.new
+    @obj = @user
   end
 
   def create
@@ -21,6 +22,7 @@ class UsersController < ApplicationController
   
   def edit
     @user = User.find(params[:id])
+    @obj = @user
   end
   
   def update
