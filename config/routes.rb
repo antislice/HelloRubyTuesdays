@@ -1,17 +1,21 @@
 HelloRubyTuesday::Application.routes.draw do
 
+  ActiveAdmin.routes(self) rescue nil
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
   devise_for :users
 
   resources :users
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :sessions, :only => [:new, :create, :destroy]
 
-  root to: 'static_pages#home'
+  root :to => 'static_pages#home'
   
-  match '/signup', to: 'users#new'
-  match '/signin', to: 'sessions#new'
-  match '/signout', to: 'sessions#destroy', via: :delete
+  match '/signup' => 'users#new', :as => 'users_new'
+  match '/signin' => 'sessions#new', :as => 'sessions_new'
+  match '/signout' => 'sessions#destroy', :via => :delete
 
-
+end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -69,4 +73,4 @@ HelloRubyTuesday::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
-end
+
