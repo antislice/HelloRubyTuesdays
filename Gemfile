@@ -5,6 +5,8 @@ gem 'jquery-rails'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'bootstrap-sass'
 
+gem 'devise'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
