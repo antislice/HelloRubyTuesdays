@@ -16,11 +16,13 @@ class UsersController < ApplicationController
   end
 
   def show
-  	@user = User.find(params[:id])
+    @user = User.find(params[:id])
   end
   
   def edit
     @user = User.find(params[:id])
+    puts "current user: ", current_user
+    puts "@user: ", @user
     unless @user == current_user
       flash[:error] = "Cannot edit other users"
       redirect_to @user
