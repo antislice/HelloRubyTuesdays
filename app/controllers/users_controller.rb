@@ -21,8 +21,6 @@ class UsersController < ApplicationController
   
   def edit
     @user = User.find(params[:id])
-    puts "current user: ", current_user
-    puts "@user: ", @user
     unless @user == current_user
       flash[:error] = "Cannot edit other users"
       redirect_to @user
