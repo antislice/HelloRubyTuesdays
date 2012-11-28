@@ -29,15 +29,7 @@ class UsersController < ApplicationController
   
   def update
     @user = User.find(params[:id])
-     
-    if @user.authenticate(params[:user][:password])
-      @user.password_confirmation = params[:user][:password]
-    else
-      flash.now[:error] = "Invalid password"
-      render 'edit'
-      return
-    end
-    
+         
     if @user.update_attributes(params[:user])
       flash[:success] = "Successfully updated!"
       sign_in @user

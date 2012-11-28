@@ -4,7 +4,7 @@
 <p>by Women Who Code</p>
 
 <p>
-  <% if !signed_in? %>
+  <% if !user_signed_in? %>
     <%= link_to "Sign up", signup_path, class: "btn btn-large btn-primary" %>
   <% end %>
 </p>

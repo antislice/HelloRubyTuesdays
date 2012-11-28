@@ -7,13 +7,16 @@ HelloRubyTuesday::Application.routes.draw do
   devise_for :users
 
   resources :users
-  resources :sessions, :only => [:new, :create, :destroy]
-
+ 
   root :to => 'static_pages#home'
   
-  match '/signup' => 'users#new', :as => 'users_new'
-  match '/signin' => 'sessions#new', :as => 'sessions_new'
-  match '/signout' => 'sessions#destroy', :via => :delete
+#  match '/signup' => 'users#new', :as => 'users_new'
+
+  as :user do
+    get '/signup' => 'users#new'
+    get '/signin' => 'devise/sessions#new'
+    get '/signout' => 'devise/sessions#destroy'
+  end
 
 end
 
