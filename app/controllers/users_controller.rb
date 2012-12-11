@@ -7,7 +7,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
-    @obj = @user
     
     if @user.save
       sign_in @user
@@ -19,26 +18,21 @@ class UsersController < ApplicationController
   end
 
   def show
-  	@user = User.find(params[:id])
+    @user = User.find(params[:id])
   end
   
   def edit
     @user = User.find(params[:id])
     @obj = @user
+    unless @user == current_user
+      flash[:error] = "Cannot edit other users"
+      redirect_to @user
+    end
   end
   
   def update
     @user = User.find(params[:id])
     @obj = @user
-    
-    if @user.authenticate(params[:user][:password])
-      @user.password_confirmation = params[:user][:password]
-    else
-      flash.now[:error] = "Invalid password"
-      render 'edit'
-      return
-    end
-    
     if @user.update_attributes(params[:user])
       flash[:success] = "Successfully updated!"
       sign_in @user
