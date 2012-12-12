@@ -21,4 +21,18 @@ describe Link do
     it {should respond_to(:user) }
   end
   
+  describe "the before save method handles http protocals" do
+    
+    it "should add 'http' if it doesn't exist" do
+      link = FactoryGirl.build(:link, :url => "google.com")
+      link.save
+      link.url.should eq "http://google.com"
+    end
+    
+    it "shouldn't add 'http' if it does exist" do
+      link = FactoryGirl.build(:link, :url => "http://google.com")
+      link.save
+      link.url.should eq "http://google.com"
+    end
+  end
 end
