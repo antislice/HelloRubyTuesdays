@@ -9,3 +9,7 @@ Email: <%= @user.email %>
 <p>
 About Me: <%= @user.about_text %>
 </p>
+
+<p>
+	<%= link_to "My Links", link_path(params[:id]) %>
+</p>

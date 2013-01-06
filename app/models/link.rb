@@ -7,7 +7,7 @@ class Link < ActiveRecord::Base
   belongs_to :user
   
   before_save :maybe_add_protocol
-  
+ 
   private
     def maybe_add_protocol
       self.url = /^http/.match(self.url) ? self.url : "http://#{self.url}"

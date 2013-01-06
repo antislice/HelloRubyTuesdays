@@ -1,4 +1,12 @@
 class LinksController < ApplicationController
+ 
+  def index
+    @links = Link.all
+  end
+ 
+  def show
+    @links = current_user.links
+  end
   
   def new
     @link = Link.new
@@ -7,6 +15,7 @@ class LinksController < ApplicationController
   
   def create
     @link = Link.new(params[:link])
+    @link.user = current_user
     @obj = @link
     if @link.save
       redirect_to links_path
@@ -15,8 +24,5 @@ class LinksController < ApplicationController
     end
   end
   
-  def index
-    @links = Link.all
-  end
-  
+
 end
