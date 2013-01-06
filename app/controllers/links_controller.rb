@@ -10,13 +10,11 @@ class LinksController < ApplicationController
   
   def new
     @link = Link.new
-    @obj = @link
   end
   
   def create
     @link = Link.new(params[:link])
     @link.user = current_user
-    @obj = @link
     if @link.save
       redirect_to links_path
     else
@@ -24,5 +22,22 @@ class LinksController < ApplicationController
     end
   end
   
+  def edit
+    @link = Link.find(params[:id])
+  end
+  
+  def update
+    @link = Link.find(params[:id])
+    if @link.update_attributes(params[:link])
+      redirect_to links_path
+    else
+      render :edit
+    end
+  end
+  
+  def destroy
+      Link.find(params[:id]).destroy
+      redirect_to links_path
+    end
 
 end

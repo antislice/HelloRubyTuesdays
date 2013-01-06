@@ -7,6 +7,10 @@ class Link < ActiveRecord::Base
   belongs_to :user
   
   before_save :maybe_add_protocol
+  
+  def editable_by?(current_user)
+    user == current_user
+  end
  
   private
     def maybe_add_protocol

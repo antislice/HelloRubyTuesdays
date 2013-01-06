@@ -1,4 +1,6 @@
 <%= form_for(:session, url: sessions_path) do |f| %>
+	<%= render 'shared/error_messages', :obj => :session %>
+	
   <%= f.label :email %>
   <%= f.text_field :email %>
 
