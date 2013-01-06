@@ -1,41 +1,62 @@
 require 'spec_helper'
 
 describe Link do
-  
-  let(:link) { FactoryGirl.build(:link) }
-  
-  it "should have a valid factory" do
-    link.should be_valid
+  before(:all) do
+    Link.delete_all
+    User.delete_all
   end
   
-  it "should require a url" do
-    link.url = ""
-    link.should_not be_valid
-  end
-
-  describe "has access to user" do
-    before do
-      user = User.new(name: "test user")
-      link.user = user
+  let(:user) { create(:user) }
+  let(:link) { create(:link, :user => user) }
+  
+  describe "validation" do
+    it "should have a valid factory" do
+      link.should be_valid
     end
-  
-    subject { link }
     
-    it {should respond_to(:user) }
+    context "#url" do
+      it "should require a url" do
+        link.url = ""
+        link.should_not be_valid
+      end
+    end
+    
+    context "#title" do
+      it "should require a title" do
+        link.title = nil
+        link.should_not be_valid
+      end
+    end
+  end
+  
+  describe "relations" do
+    
+    context "#user" do
+      
+      subject { link }
+  
+      it {should respond_to(:user) }
+      
+      it "should be equal to the link user" do
+        link.user.should == user
+      end
+
+    end
+    
   end
   
   describe "the before save method handles http protocals" do
         
     it "should add 'http' if it doesn't exist" do
-      link.url = "google.com"
+      link.url = "new_google.com"
       link.save
-      link.url.should eq "http://google.com"
+      link.url.should eq "http://new_google.com"
     end
     
     it "shouldn't add 'http' if it does exist" do
-      link.url = "http://google.com"
+      link.url = "http://new_google.com"
       link.save
-      link.url.should eq "http://google.com"
+      link.url.should eq "http://new_google.com"
     end
   end
 end
