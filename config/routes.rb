@@ -18,6 +18,7 @@ HelloRubyTuesday::Application.routes.draw do
     get '/signup' => 'devise/registrations#new'
     get '/signin' => 'devise/sessions#new'
     get '/signout' => 'devise/sessions#destroy'
+    get '/users/edit' => 'devise/registrations#edit'
   end
 
 end
