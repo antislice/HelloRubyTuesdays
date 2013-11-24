@@ -7,6 +7,7 @@ gem 'bootstrap-sass'
 
 gem 'devise'
 gem 'activeadmin'
+gem 'acts-as-taggable-on'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

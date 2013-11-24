@@ -5,12 +5,13 @@
 	<% @links.each do |link| %>
 		<tr>	
 			<th><%= link_to link.title, link.url, :target => "_blank" %></th>
-  		<td><%= link.description %></td>
+  		    <td><%= link.description %></td>
 			<td><%= link.user.name %></td>
 			<% if link.editable_by?(current_user) %>
 				<td><%= link_to "Edit Link", edit_link_path(link) %></td>
 				<td><%= link_to "Delete Link", link_path(link), :method => :delete %></td>
 			<% end %>
+            <td><%= link.tag_list %></td>
 		</tr>
 	<% end %>
 </table>

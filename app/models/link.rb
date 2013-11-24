@@ -1,5 +1,5 @@
 class Link < ActiveRecord::Base
-  attr_accessible :description, :title, :url, :user
+  attr_accessible :description, :title, :url, :user, :tag_list
   
   validates :url, presence: true
   validates :title, presence: true
@@ -7,6 +7,8 @@ class Link < ActiveRecord::Base
   belongs_to :user
   
   before_save :maybe_add_protocol
+
+  acts_as_taggable
   
   def editable_by?(current_user)
     user == current_user
