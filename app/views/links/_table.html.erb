@@ -11,7 +11,7 @@
 				<td><%= link_to "Edit Link", edit_link_path(link) %></td>
 				<td><%= link_to "Delete Link", link_path(link), :method => :delete %></td>
 			<% end %>
-            <td><%= link.tag_list %></td>
+            <td><%= raw link.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></td>
 		</tr>
 	<% end %>
 </table>

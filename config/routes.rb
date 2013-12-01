@@ -21,5 +21,7 @@ HelloRubyTuesday::Application.routes.draw do
     get '/users/edit' => 'devise/registrations#edit'
   end
 
+  get 'tags/:tag', to: 'tags#show', :as => :tag
+
 end
 
