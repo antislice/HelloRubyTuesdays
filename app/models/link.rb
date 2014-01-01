@@ -9,6 +9,11 @@ class Link < ActiveRecord::Base
   before_save :maybe_add_protocol
 
   acts_as_taggable
+
+  def username
+    return user.name unless user.nil?
+    '[deleted]'
+  end
   
   def editable_by?(current_user)
     user == current_user
