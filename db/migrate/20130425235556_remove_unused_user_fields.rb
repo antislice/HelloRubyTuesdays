@@ -1,8 +1,8 @@
 class RemoveUnusedUserFields < ActiveRecord::Migration
   def up
     remove_index  :users, :remember_token
-    remove_column :users, :remember_token, :string
-    remove_column :users, :password_digest, :string
+    remove_column :users, :remember_token
+    remove_column :users, :password_digest
   end
 
   def down
