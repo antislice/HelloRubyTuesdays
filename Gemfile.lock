@@ -216,7 +216,7 @@ DEPENDENCIES
   activeadmin
   acts-as-taggable-on
   bcrypt-ruby (= 3.0.1)
-  bootstrap-sass
+  bootstrap-sass (= 3.0.3.0)
   capybara (= 1.1.2)
   coffee-rails (= 3.2.2)
   cucumber-rails

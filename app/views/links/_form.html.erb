@@ -2,15 +2,15 @@
   <%= render 'shared/error_messages', :obj => @link %>
   <%= f.label :title %>
   <%= f.text_field :title %>
-  
+  <br/>
   <%= f.label :url %>
   <%= f.text_field :url %>
-  
+  <br/>
   <%= f.label :description %>
-  <%= f.text_area :description %>
-
+  <%= f.text_area :description, rows: '2' %>
+  <br/>
   <%= f.label :tag_list %>
   <%= f.text_field :tag_list %>
   <br/>
-  <%= f.submit "Add link!", class: "btn btn-large btn-primary" %>
+  <%= f.submit "Add link!", class: "btn btn-lg btn-primary", role: 'button' %>
 <% end %>

@@ -3,19 +3,18 @@
   
   <%= f.label :name, "Name*" %>
   <%= f.text_field :name %>
-
+  <br/>
   <%= f.label :email, "Email*" %>
   <%= f.text_field :email %>
-  
+  <br/>
   <%= f.label :about_text, "Your Story" %>
-  <%= f.text_area :about_text %>
-  
+  <%= f.text_area :about_text, rows: '3' %>
+  <br/>
   <%= f.label :password, "Password*" %>
   <%= f.password_field :password %>
-
-	<%= f.label :password_confirmation, "Password Confirmation" %>
-	<%= f.password_field :password_confirmation %>
-  
   <br/>
-  <%= f.submit "Submit", class: "btn btn-large btn-primary" %> 
+    <%= f.label :password_confirmation, "Password Confirmation" %>
+	<%= f.password_field :password_confirmation %>
+  <br/>
+  <%= f.submit "Submit", class: "btn btn-primary btn-lg", role: 'button' %>
 <% end %>

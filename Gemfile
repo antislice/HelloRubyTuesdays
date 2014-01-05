@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails',      '3.2.11'
 gem 'jquery-rails'
 gem 'bcrypt-ruby', '3.0.1'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '3.0.3.0'
 
 gem 'devise'
 gem 'activeadmin'

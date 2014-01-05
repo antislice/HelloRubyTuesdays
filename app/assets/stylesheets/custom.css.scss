@@ -1,9 +1,13 @@
+@import "bootstrap";
+
 html {
   overflow-y: scroll;
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 54px;
+  font-size: 13px;
+  line-height: 18px;
 }
 
 section {
@@ -12,6 +16,18 @@ section {
 
 textarea {
   resize: vertical;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a.btn-primary {
+  color: white;
 }
 
 .center {
@@ -38,7 +54,7 @@ th, td {
 	font-size: 1.7em;
 	font-weight: bold;
 	float: left;
-	margin: 5px 10px;
+	margin: 0px 10px;
 	color: white;
 	&:hover {
 		color: white;
@@ -50,10 +66,9 @@ th, td {
 }
 
 #header_nav {
-    margin-top: 5px;
     margin-right: 15px;
 }
 
 .navbar {
-  height: 60px;
+  height: 54px;
 }
