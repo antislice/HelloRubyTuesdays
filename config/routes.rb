@@ -12,7 +12,7 @@ HelloRubyTuesday::Application.routes.draw do
   end
   resources :links
  
-  root :to => 'static_pages#home'
+  root to: 'static_pages#home'
   
   as :user do
     get '/signup' => 'devise/registrations#new'
