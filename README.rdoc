@@ -1,84 +1,14 @@
-== Hi girls,
-Had some problems at the beginning, because I updated my Mac OS to Mountain Lion.
-When it tried to fetch new gems, it didn't find some commands, like 'make', so it stopped.
-If you experience simmular problems, you have to
-1. Install the newest version of Xcode on your Mac
-2. In the new Xcode's preferences, there you find Downloads, where you should install the 'Command Line Tools'
+== Hello Ruby Tuesdays
+A site for us to collect and share resources from Women Who Code's Ruby Tuesday meetups.
 
-During I set up the framework, I followed the first steps of the Hartl Tutorial.
-Thought, it's easier for most of us, if we have something to lean on.
+=== Contributing
+Dependencies: Ruby 1.9.3p484 & Rails 3.2.11
 
-Dani 
+1. Fork & clone this repo
+2. bundle install
+3. rake db:migrate
+4. rails s
 
-== USED VERSIONS
+And if that doesn't work let us know... 
 
-Rails 3.2.7
-Ruby 1.9.3p194
-
-Note for windows users: we now use twitter bootstrap, which has known issues with windows.  If you find a fix or workaround that allows you to develop with it on windows, please update this page.
-
-== Interesting info
-=== Console
-
-The console is a Ruby shell, which allows you to interact with your
-application's domain model. Here you'll have all parts of the application
-configured, just like it is when the application is running. You can inspect
-domain models, change values, and save to the database. Starting the script
-without arguments will launch it in the development environment.
-
-To start the console, run <tt>rails console</tt> from the application
-directory.
-
-Options:
-
-* Passing the <tt>-s, --sandbox</tt> argument will rollback any modifications
-  made to the database.
-* Passing an environment name as an argument will load the corresponding
-  environment. Example: <tt>rails console production</tt>.
-
-To reload your controllers and models after launching the console run
-<tt>reload!</tt>
-
-More information about irb can be found at:
-link:http://www.rubycentral.org/pickaxe/irb.html
-
-
-=== dbconsole
-
-You can go to the command line of your database directly through <tt>rails
-dbconsole</tt>. You would be connected to the database with the credentials
-defined in database.yml. Starting the script without arguments will connect you
-to the development database. Passing an argument will connect you to a different
-database, like <tt>rails dbconsole production</tt>. Currently works for MySQL,
-PostgreSQL and SQLite 3.
-
-Devise Tips:
-
-Some setup you must do manually if you haven't yet:
-
-  1. Ensure you have defined default url options in your environments files. Here 
-     is an example of default_url_options appropriate for a development environment 
-     in config/environments/development.rb:
-
-       config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-
-     In production, :host should be set to the actual host of your application.
-
-  2. Ensure you have defined root_url to *something* in your config/routes.rb.
-     For example:
-
-       root :to => "home#index"
-
-  3. Ensure you have flash messages in app/views/layouts/application.html.erb.
-     For example:
-
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-
-  4. If you are deploying Rails 3.1 on Heroku, you may want to set:
-
-       config.assets.initialize_on_precompile = false
-
-     On config/application.rb forcing your application to not access the DB
-     or load models when precompiling your assets.
-
+We're still working on getting planned features and bugs out of the brain-dump in pivotal tracker and into github for better visibility.  If you'd like to contribute and need something to work on, contact Georgia A (antislice).
