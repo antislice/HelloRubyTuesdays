@@ -13,7 +13,6 @@ gem 'acts-as-taggable-on'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
-   gem 'sqlite3', '~> 1.3.8'
    gem 'rspec-rails','2.10.0'
 end
 
@@ -35,9 +34,7 @@ group :test do
   gem 'factory_girl_rails', '1.4.0'
 end
 
-# group :production do
-   gem 'pg',            '0.12.2'
-# end
+gem 'pg',            '0.15.1'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
