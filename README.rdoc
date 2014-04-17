@@ -2,7 +2,7 @@
 A site for us to collect and share resources from Women Who Code's Ruby Tuesday meetups.
 
 === Contributing
-Dependencies: Ruby 1.9.3p484 & Rails 3.2.11
+Dependencies: Ruby 2.0.0p257 & Rails 4.0.2
 
 1. Fork & clone this repo
 2. bundle install
