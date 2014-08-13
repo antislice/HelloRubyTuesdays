@@ -99,6 +99,9 @@ GEM
       factory_girl (~> 2.3.0)
       railties (>= 3.0.0)
     ffi (1.9.3)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     formtastic (2.3.0.rc2)
       actionpack (>= 3.0)
     gherkin (2.12.2)
@@ -226,6 +229,7 @@ DEPENDENCIES
   database_cleaner
   devise
   factory_girl_rails (= 1.4.0)
+  figaro
   jquery-rails
   pg (= 0.15.1)
   rails (= 4.0.2)
