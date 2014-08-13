@@ -17,3 +17,5 @@
 /app/.DS_Store
 # Ruby/Rails
 # Gemfile.lock # heroku requires that this be checked in
+
+issues.csv
