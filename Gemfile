@@ -7,6 +7,7 @@ gem 'bcrypt-ruby', '3.0.1'
 gem 'bootstrap-sass', '3.0.3.0'
 
 gem 'devise'
+gem 'omniauth-github'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'acts-as-taggable-on'
 
