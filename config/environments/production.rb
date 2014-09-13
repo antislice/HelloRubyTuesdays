@@ -60,4 +60,7 @@ HelloRubyTuesday::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+  # figaro told me to
+  config.eager_load = true
 end
