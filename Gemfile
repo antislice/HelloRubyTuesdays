@@ -32,8 +32,9 @@ end
 group :test do
   gem 'database_cleaner'
   gem 'capybara',   '1.1.2'
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', :require => false
   gem 'factory_girl_rails', '1.4.0'
+  gem 'faker'
 end
 
 gem 'pg',            '0.15.1'
