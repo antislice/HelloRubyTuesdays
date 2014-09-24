@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   has_many :links
   
   validates :name, presence: true
+  validates :email, presence: true, if: "uid.nil?"
+  validates :uid, presence: true, if: "email.nil?"
 
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
