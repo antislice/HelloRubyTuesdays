@@ -1,7 +1,20 @@
 <% provide(:title, 'WomenWhoCode') %>
-
-<h1>Hello Ruby Tuesday!</h1>
-<h2><%= link_to "Sign up", signup_path %></h2>
+<% flash.each do |key, value| %>
+    <div class ="alert alert-<%= flash_to_bootstrap(key) %>"><%= value %></div>
+<% end %>
+<h1>Hello Ruby Tuesdays!</h1>
 <p>by Women Who Code</p>
 
+<% if not user_signed_in? %>
+    <%= link_to "Sign up", signup_path, class: "btn btn-lg btn-primary" %>
 
+    <%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %>
+<% else %>
+    <div id="tag_cloud">
+      Tags!  Check out what we're posting:<br/>
+      <% tag_cloud Link.tag_counts.order(:name), ['btn-xs', 'btn-sm', '', 'btn-lg'] do |tag, css_class| %>
+          <%= link_to tag.name, tag_path(tag.name), class: "btn btn-info #{css_class}", role: 'button'%>
+      <% end %>
+</div>
+<%= link_to "See all links", links_path %>
+<% end %>

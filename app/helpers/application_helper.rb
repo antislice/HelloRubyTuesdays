@@ -9,4 +9,15 @@ module ApplicationHelper
       end
    end
 
+  def flash_to_bootstrap(alert_type)
+    case alert_type
+      when :alert
+        return 'danger'
+      when :notice
+        return 'success'
+      else
+        return ''
+    end
+  end
+
 end

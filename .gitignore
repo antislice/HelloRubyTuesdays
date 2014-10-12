@@ -13,3 +13,12 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+.DS_Store
+/app/.DS_Store
+# Ruby/Rails
+# Gemfile.lock # heroku requires that this be checked in
+
+issues.csv
+
+# Ignore application configuration
+/config/application.yml
